@@ -1,6 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://thingslibrary.io/schemas/1.0.0/attribute.json",
+    "$comment": "This schema is designed to be pared with item types.",
     "$version": "1.0.0",
 
     "type": "object",

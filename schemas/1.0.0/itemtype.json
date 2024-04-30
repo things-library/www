@@ -1,6 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://thingslibrary.io/schemas/1.0.0/itemtype.json",
+    "$comment": "Item types are used to explain all that is possible attribute and attachment wise with a thing.",
     "$version": "1.0.0",
 
     "type": "object",
@@ -39,14 +40,11 @@
         },
 
         "attributes": {
-            "type": "object",
+            "type": "array",
             "title": "Attributes",
-            "patternProperties": {
-                "^[a-z0-9_]+$": {
-                    "$ref": "https://thingslibrary.io/schemas/1.0.0/attribute.json"
-                }
-            },
-            "additionalProperties": false
+            "items": {
+                "$ref": "https://thingslibrary.io/schemas/1.0.0/attribute.json"
+            }
         }
     },
     "required": [ "key", "name" ]
