@@ -1,0 +1,77 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://thingslibrary.io/schemas/1.0.0/attribute.json",
+    "$version": "1.0.0",
+
+    "type": "object",
+    "properties": {
+        "key": {
+            "type": "string",
+            "title": "Key",
+            "minLength": 2,
+            "pattern": "^[a-z0-9_]*$"
+        },
+
+        "name": {
+            "type": "string",
+            "title": "Name",
+            "minLength": 2,
+            "maxLength": 50
+        },
+
+        "type": {
+            "type": "string",
+            "title": "Data Type",
+            "enum": [ "boolean", "currency", "date", "date_time", "duration", "email", "enum", "html", "password", "phone", "string", "text", "time", "url", "decimal", "int", "decimal_range", "int_range" ]
+        },
+
+        "units": {
+            "type": "string",
+            "title": "Unit Symbol"
+        },
+
+        "weight": {
+            "type": "integer",
+            "title": "Order (Weight)",
+            "description": "Where in the list should this item show up priority wise",
+            "default": 0
+        },
+
+        "multi": {
+            "type": "boolean",
+            "title": "Allow Multiples",
+            "description": "Allow multiple of this attribute attached to a Thing",
+            "default": false
+        },
+
+        "required": {
+            "type": "boolean",
+            "title": "Required",
+            "description": "Is this field required to be entered",
+            "default": false
+        },
+
+        "locked": {
+            "type": "boolean",
+            "title": "Locked",
+            "description": "Prevent new attribute values from being added",
+            "default": false
+        },
+
+        "system": {
+            "type": "boolean",
+            "title": "System",
+            "description": "Indicates that this attribute is managed by the system and can't be edited by a user",
+            "default": false
+        },
+
+        "values": {
+            "type": "object",
+            "title": "Values",
+            "additionalProperties": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [ "key", "name", "type" ]
+}
